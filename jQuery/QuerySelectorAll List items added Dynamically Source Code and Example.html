@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+ 
+<head>
+    <title>Example querySelectorAll</title>
+</head>
+ 
+<body>
+    <ul></ul>
+    <input type="text" name="myInput" value="test">
+    <button>Click Me to add item</button>
+    <script>
+        const ul = document.querySelector('ul');
+        const li = document.querySelectorAll('li');
+ 
+        const myInput = document.querySelector('input[name="myInput"]');
+        const btn = document.querySelector('button');
+        let x = 0;
+        let val = myInput.value;
+        btn.addEventListener('click', (e) => {
+            //console.log(e);
+            x++;
+            e.target.textContent = 'Clicked ' + x;
+            addListItem();
+        })
+ 
+        function addListItem() {
+ 
+            //console.log(myInput.value);
+            //console.log(val);
+            console.dir(ul);
+            console.log(ul.children.length);
+            console.log(ul.childElementCount);
+            const lis = document.querySelectorAll('li');
+            //console.log(lis.length);
+ 
+            if (myInput.value.length > 3 && lis.length < 5) {
+                const li = document.createElement('li');
+                li.textContent = myInput.value;
+                const val1 = ul.appendChild(li);
+                //console.log(val1);
+            }
+ 
+        }
+    </script>
+ 
+</body>
+ 
+</html>
